@@ -380,7 +380,9 @@ spawn(function()
     wait(0.1)
     notify("Auto Detect Prefix (Beta) Will Lag If You Type More Than 11 Letters.")
     wait(5)
-    notify("1563 words added (updated on 3/14/26)")
+    notify("4 new words added (Updated on 3/16/2026)")
+    wait(10)
+    notify("Be careful when using this, because some players are extremely active in reporting others. They can detect when players are searching or not. Even a single report that gets resolved could get you banned.")
 
     statusLabel.Visible = false
 
