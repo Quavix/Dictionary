@@ -380,7 +380,7 @@ spawn(function()
     wait(0.1)
     notify("Auto Detect Prefix Lag Is Fixed")
     wait(5)
-    notify("Adding 2 New Long Words (Updated on 3/21/2026)")
+    notify("Adding 4 New Words and Removing 3 Words (Updated on 3/21/2026)")
     wait(10)
     
     pcall(function()
