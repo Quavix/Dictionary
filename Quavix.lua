@@ -8,6 +8,7 @@ local currentPage = 1
 local wordsPerPage = 50
 local sortMode = "Shortest"
 local randomLoopRunning = false
+local lastInput = ""
 
 local function LoadWords()
     if loaded then return end
@@ -269,8 +270,11 @@ end
 
 function UpdateSuggestions()
     if not loaded then return end
-    ClearSuggestions()
     local text = h.Text
+    if text == lastInput then return end
+    lastInput = text
+
+    ClearSuggestions()
     if #text < 1 then return end
     local suggests = SuggestWords(text,1000)
     
@@ -328,7 +332,14 @@ nextButton.MouseButton1Click:Connect(function()
     end
 end)
 
+local typingDelay = 0
 h:GetPropertyChangedSignal("Text"):Connect(function()
+    typingDelay = typingDelay + 1
+    local current = typingDelay
+
+    task.wait(0.1)
+    if current ~= typingDelay then return end
+
     currentPage = 1
     ClearSuggestions()
 
